@@ -1,0 +1,1 @@
+savedcmd_/home/karthikdpatel/Documents/Kernel_Drivers/sleepy_driver/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /home/karthikdpatel/Documents/Kernel_Drivers/sleepy_driver/Module.symvers -T /home/karthikdpatel/Documents/Kernel_Drivers/sleepy_driver/modules.order -i Module.symvers -e 
