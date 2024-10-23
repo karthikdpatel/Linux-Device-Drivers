@@ -1,0 +1,1 @@
+savedcmd_/home/karthikdpatel/Documents/Kernel_Drivers/scull_driver/scull.mod := printf '%s\n'   scull.o | awk '!x[$$0]++ { print("/home/karthikdpatel/Documents/Kernel_Drivers/scull_driver/"$$0) }' > /home/karthikdpatel/Documents/Kernel_Drivers/scull_driver/scull.mod

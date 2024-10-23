@@ -1,0 +1,1 @@
+savedcmd_/home/karthikdpatel/Documents/Kernel_Drivers/scull_driver/scull.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/karthikdpatel/Documents/Kernel_Drivers/scull_driver/scull.ko /home/karthikdpatel/Documents/Kernel_Drivers/scull_driver/scull.o /home/karthikdpatel/Documents/Kernel_Drivers/scull_driver/scull.mod.o

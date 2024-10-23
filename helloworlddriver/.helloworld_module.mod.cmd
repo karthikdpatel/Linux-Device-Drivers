@@ -1,0 +1,1 @@
+savedcmd_/home/karthikdpatel/Documents/Kernel_Drivers/helloworlddriver/helloworld_module.mod := printf '%s\n'   helloworld_module.o | awk '!x[$$0]++ { print("/home/karthikdpatel/Documents/Kernel_Drivers/helloworlddriver/"$$0) }' > /home/karthikdpatel/Documents/Kernel_Drivers/helloworlddriver/helloworld_module.mod
