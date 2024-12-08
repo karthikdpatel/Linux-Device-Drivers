@@ -1,0 +1,1 @@
+savedcmd_/home/karthikdpatel/Documents/Kernel_Drivers/scull_pipe/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /home/karthikdpatel/Documents/Kernel_Drivers/scull_pipe/Module.symvers -T /home/karthikdpatel/Documents/Kernel_Drivers/scull_pipe/modules.order -i Module.symvers -e 

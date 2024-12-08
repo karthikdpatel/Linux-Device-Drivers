@@ -6,6 +6,8 @@
 #include <linux/slab.h>
 #include "scull_ioctl.h"
 #include <asm/uaccess.h>
+#include <linux/workqueue.h>
+
 
 MODULE_LICENSE("Dual BSD/GPL");
 static int scull_release(struct inode * inode, struct file * filp);
@@ -13,6 +15,8 @@ static int scull_open(struct inode * inode, struct file * filp);
 static ssize_t scull_write(struct file * file_p, const char __user * buff, size_t count, loff_t * pos);
 static ssize_t scull_read(struct file * file_p, char __user * buff, size_t count, loff_t * pos);
 static long scull_ioctl(struct file * filep, unsigned int cmd, unsigned long arg);
+
+void interupt_handler(void *data);
 
 static dev_t dev_num;
 static struct cdev * scull_cdev;
@@ -24,6 +28,9 @@ static struct file_operations scull_fops = {
 	.write = scull_write,
 	.unlocked_ioctl = scull_ioctl,
 };
+
+static struct workqueue_struct *my_wq;
+static struct work_struct *work;
 
 struct kmem_cache *scull_quantum_cache;
 
@@ -369,6 +376,9 @@ static int __init scull_init(void)
         printk("SCULL : Added char dev to kernel\n");
         
         //scull_quantum_cache = kmem_cache_create("scull_quantum_cache", SCULL_QUANTUM, 0, SLAB_HWCACHE_ALIGN, NULL);
+        
+        my_wq = create_singlethread_workqueue("scull_workqueue");
+        INIT_WORK(work, interupt_handler, NULL);
         
         return 0;
 }

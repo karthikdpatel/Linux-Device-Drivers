@@ -62,7 +62,7 @@ static int allocate_device_num_dynmaically(void)
 
 static int __init scull_init(void)
 {
-	static struct file_operations scull_fops = {
+	static struct file_operations sleepy_driver_fops = {
 		.owner = THIS_MODULE,
 		.open = sleepy_open,
 		.release = sleepy_release,
@@ -83,7 +83,7 @@ static int __init scull_init(void)
 		unregister_chrdev_region(dev_num, 1);
 		return -ENOMEM;
 	}
-	cdev_init(sleepy_dev_cdev, &scull_fops);
+	cdev_init(sleepy_dev_cdev, &sleepy_driver_fops);
 	sleepy_dev_cdev->owner = THIS_MODULE;
 	
 	if (cdev_add(sleepy_dev_cdev, dev_num, 1) < 0) 

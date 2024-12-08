@@ -1,0 +1,1 @@
+savedcmd_/home/karthikdpatel/Documents/Kernel_Drivers/scull_pipe/scull_pipe.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/karthikdpatel/Documents/Kernel_Drivers/scull_pipe/scull_pipe.ko /home/karthikdpatel/Documents/Kernel_Drivers/scull_pipe/scull_pipe.o /home/karthikdpatel/Documents/Kernel_Drivers/scull_pipe/scull_pipe.mod.o
